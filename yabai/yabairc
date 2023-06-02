@@ -1,0 +1,73 @@
+#!/usr/bin/env sh
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# general space settings
+yabai -m config layout                       bsp
+
+# Color
+yabai -m config window_border on
+yabai -m config window_border_blur off
+yabai -m config window_border_width          5
+yabai -m config active_window_border_color 0xFF88C0D0
+yabai -m config normal_window_border_color 0x002E3440
+yabai -m config insert_feedback_color 0xFFA3BE8C
+#
+yabai -m config window_opacity               on
+yabai -m config window_opacity_duration      0.0
+yabai -m config active_window_opacity        0.0
+yabai -m config normal_window_opacity        0.0
+
+# Padding 
+yabai -m config top_padding                  8
+yabai -m config bottom_padding               8
+yabai -m config left_padding                 8
+yabai -m config right_padding                8
+
+yabai -m config window_gap                   8
+
+# global settings
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          off
+yabai -m config window_origin_display        default
+yabai -m config window_placement             second_child
+# floating windows are always on top (default: off)
+yabai -m config window_topmost               off
+# modify window shadows (default: on, options: on, off, float)
+# example: show shadows only for floating windows
+yabai -m config window_shadow                float
+
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^TextEdit$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
+yabai -m rule --add app="^Riot Client$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Pika$" manage=off
+yabai -m rule --add app="^Creative Cloud$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^NordPass$" manage=off
+yabai -m rule --add app="^Stats$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^NordVPN$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Shortcuts$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+
+yabai -m rule --add app="^Notes$" manage=on
+yabai -m rule --add app="^Whatsapp$" manage=on
+
+
+echo "yabai configuration aded.."

@@ -1,0 +1,10 @@
+configstore/
+firebase/
+flutter/
+gcloud/
+github-copilot/
+kitty/
+raycast/
+rclone/
+simple-update-notifier/
+yarn/
