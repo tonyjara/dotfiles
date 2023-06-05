@@ -1,16 +1,8 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		--[[ { "folke/neoconf.nvim", cmd = "Neoconf", config = true }, ]]
-		--[[ { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } }, ]]
 		"mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		--[[ { ]]
-		--[[ 	"hrsh7th/cmp-nvim-lsp", ]]
-		--[[ cond = function() ]]
-		--[[ 	return require("lazyvim.util").has("nvim-cmp") ]]
-		--[[ end, ]]
-		--[[ }, ]]
 	},
 	config = function()
 		local status, nvim_lsp = pcall(require, "lspconfig")
@@ -84,10 +76,10 @@ return {
 		-- Set up completion using nvim_cmp with LSP source
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		nvim_lsp.flow.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
+		--[[ nvim_lsp.flow.setup({ ]]
+		--[[ 	on_attach = on_attach, ]]
+		--[[ 	capabilities = capabilities, ]]
+		--[[ }) ]]
 
 		nvim_lsp.eslint.setup({
 			settings = {
@@ -100,6 +92,12 @@ return {
 					},
 				},
 			},
+		})
+
+		nvim_lsp.pyright.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "python" },
 		})
 
 		nvim_lsp.tsserver.setup({

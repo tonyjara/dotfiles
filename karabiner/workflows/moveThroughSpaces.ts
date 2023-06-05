@@ -1,7 +1,7 @@
-import { KarabinerRules } from "../types";
+import { SubLayerRules } from "../types";
 
 /* Move through spaces using jkl; andm,.\/ */
-export const moveThroughSpaces: any = {
+export const moveThroughSpaces: SubLayerRules = {
   j: {
     description: "Go to space 1",
     to: [

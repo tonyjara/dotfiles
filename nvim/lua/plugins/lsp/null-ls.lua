@@ -4,17 +4,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "mason.nvim" },
 	opts = function()
-		--[[ local nls = require("null-ls") ]]
-		--[[ return { ]]
-		--[[   root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"), ]]
-		--[[   sources = { ]]
-		--[[     nls.builtins.formatting.fish_indent, ]]
-		--[[     nls.builtins.diagnostics.fish, ]]
-		--[[     nls.builtins.formatting.stylua, ]]
-		--[[     nls.builtins.formatting.shfmt, ]]
-		--[[     -- nls.builtins.diagnostics.flake8, ]]
-		--[[   }, ]]
-		--[[ } ]]
 		local null_ls = require("null-ls")
 
 		local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
@@ -25,16 +14,15 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				--[[ null_ls.builtins.diagnostics.eslint, ]]
-				--[[ null_ls.builtins.completion.spell, ]]
-				-- Bad completion, adds text
+				-- Python
+				null_ls.builtins.diagnostics.mypy,
+				null_ls.builtins.diagnostics.ruff,
+				null_ls.builtins.formatting.black,
+
 				null_ls.builtins.formatting.Prettier,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
-					--[[ vim.keymap.set("n", "<Leader>f", function() ]]
-					--[[   vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() }) ]]
-					--[[ end, { buffer = bufnr, desc = "[lsp] format" }) ]]
 					-- format on save
 					vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
 					vim.api.nvim_create_autocmd(event, {
@@ -46,12 +34,6 @@ return {
 						desc = "[lsp] format on save",
 					})
 				end
-
-				--[[ if client.supports_method("textDocument/rangeFormatting") then ]]
-				--[[     vim.keymap.set("x", "<Leader>f", function() ]]
-				--[[         vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() }) ]]
-				--[[     end, { buffer = bufnr, desc = "[lsp] format" }) ]]
-				--[[ end ]]
 			end,
 		})
 	end,

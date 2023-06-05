@@ -13,6 +13,8 @@ shift + cmd - k : yabai -m window --swap north
 shift + cmd - l : yabai -m window --swap east
 # Equilize
 shift + cmd - e : yabai -m space --balance 
+# Toggle border
+shift + cmd - b : yabai -m window --toggle border 
 
 
 # Change focus between external display's

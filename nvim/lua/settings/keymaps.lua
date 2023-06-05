@@ -1,8 +1,21 @@
 vim.g.mapleader = " " -- maps space to word leader
 
 -- This is necessary to not source nvim-tree every time
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+
+-- Navigate start, end, top and bottom
+map("n", "J", "G", opts) --bottom
+map("n", "K", "gg", opts) --top
+map("n", "L", "$", opts) --end
+map("n", "H", "^", opts) --start
+
+map("v", "J", "G", opts) --bottom
+map("v", "K", "gg", opts) --top
+map("v", "L", "$", opts) --end
+map("v", "H", "^", opts) --start
+
+-- Nvim tree
 map("n", "<leader>bb", "<cmd>NvimTreeToggle<CR>", opts)
 map("n", "<leader>bf", "<cmd>NvimTreeFindFile<CR>", opts)
 map("n", "<leader>cc", "<cmd>NvimTreeCollapse<CR>", opts)
@@ -10,6 +23,12 @@ map("n", "<leader>cc", "<cmd>NvimTreeCollapse<CR>", opts)
 -- Unmap q so that no macros get accidentally triggered
 map("n", "q", "<Nop>", opts)
 map("v", "q", "<Nop>", opts)
+
+-- Dap debugger keymaps
+map("n", "<leader>db", "<cmd>:DapToggleBreakpoint<CR>", opts)
+map("n", "<leader>dpr", function()
+	require("dap-python").test_method()
+end, opts)
 
 -- Open LazyGit
 map("n", "<leader>lg", "<cmd>:LazyGit<CR>", opts)
@@ -20,49 +39,34 @@ map("n", "<leader>]", "<cmd>vsplit<CR><cmd>BufferLineCyclePrev<CR><C-w>p", opts)
 -- Lazy git
 map("n", "<leader>lg", "<cmd>:LazyGit<CR>", opts)
 
--- UNMAP H to improve typing
---[[ vim.keymap.set("n", "h", "<Nop>") ]]
 --Allows ctrl d and u nav to keep cursor centered
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
 --Allows search terms to be in the middle
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", '"_dp') -- paste over selection
-vim.keymap.set("n", "]p", "o<Esc>p") -- Paste on the next line
+-- PASTE REBINDS
+map("n", "]p", "o<Esc>p") -- Paste on the next line
+map("x", "<leader>p", '"_dp') -- paste over selection
 
 -- INSERT MODE REBINDS
 -- Exits i mode
-vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("i", "<C-s>", "<Esc><cmd>update<CR>") -- SAVES file
+map("i", "jj", "<Esc>")
+map("i", "<C-s>", "<Esc><cmd>update<CR>") -- SAVES file
 
 --NORMAL MODE REBINDS
 -- Pane navigation
---[[ vim.keymap.set("n", "<leader>wh", "<C-w>h") ]]
---[[ vim.keymap.set("n", "<leader>wl", "<C-w>l") ]]
---[[ vim.keymap.set("n", "<leader>wc", "ZZ") ]]
-vim.keymap.set("n", "d", '"_d') -- delete without cutting
-vim.keymap.set("n", "ˇ", "<cmd>tabclose<CR>")
-vim.keymap.set("n", "<C-s>", "<cmd>update<CR>") -- SAVES file
+map("n", "d", '"_d') -- delete without cutting
+map("n", "ˇ", "<cmd>tabclose<CR>")
+map("n", "<C-s>", "<cmd>update<CR>") -- SAVES file
 
 --VISUAL MODE REBINDS
-vim.keymap.set("v", "d", '"_d') -- delete without cutting
-vim.keymap.set("v", "<C-s>", "<Esc><cmd>update<CR>") -- SAVES file
---[[ vim.keymap.set("v", "<leader>l", "$") --move end of line ]]
---[[ vim.keymap.set("v", "<leader>h", "^") --move start of line ]]
+map("v", "d", '"_d') -- delete without cutting
+map("v", "<C-s>", "<Esc><cmd>update<CR>") -- SAVES file
+
 --Copy to clipboard
-vim.keymap.set("v", "<leader>y", '"+y') --   vnoremap  <leader>y  "+y
+map("v", "<leader>y", '"+y') --   vnoremap  <leader>y  "+y
 --Keep cursor in place after v copy
-vim.keymap.set("v", "y", "ygv<Esc>")
---   vnoremap  <leader>y  "+y
---nnoremap  <leader>Y  "+yg_
---nnoremap  <leader>y  "+y
---nnoremap  <leader>yy  "+yy
---
---" " Paste from clipboard
---nnoremap <leader>p "+p
---nnoremap <leader>P "+P
---vnoremap <leader>p "+p
---vnoremap <leader>P "+P
+map("v", "y", "ygv<Esc>")

@@ -191,7 +191,7 @@ return {
 				width = 30,
 				centralize_selection = true,
 				cursorline = true,
-				hide_root_folder = true,
+				--[[ hide_root_folder = true, ]]
 				side = "left",
 				mappings = {
 					custom_only = false,

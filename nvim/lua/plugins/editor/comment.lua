@@ -1,7 +1,7 @@
 return {
 	"numToStr/Comment.nvim", -- Easily comment stuff
 	dependencies = "JoosepAlviste/nvim-ts-context-commentstring", -- detect comment based on cursor
-	opts = function()
+	config = function()
 		local status_ok, comment = pcall(require, "Comment")
 		if not status_ok then
 			return

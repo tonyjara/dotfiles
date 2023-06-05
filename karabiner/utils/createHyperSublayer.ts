@@ -106,6 +106,7 @@ export function createHyperSubLayer(
 export function createHyperSubLayers(subLayers: {
   [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
 }): KarabinerRules[] {
+  //
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
   ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
