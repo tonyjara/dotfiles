@@ -1,30 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	version = false, -- last release is way too old and doesn't work on Windows
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
-	dependencies = {
-		{
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			init = function()
-				-- PERF: no need to load the plugin, if we only need its queries for mini.ai
-				local plugin = require("lazy.core.config").spec.plugins["nvim-treesitter"]
-				local opts = require("lazy.core.plugin").values(plugin, "opts", false)
-				local enabled = false
-				if opts.textobjects then
-					for _, mod in ipairs({ "move", "select", "swap", "lsp_interop" }) do
-						if opts.textobjects[mod] and opts.textobjects[mod].enable then
-							enabled = true
-							break
-						end
-					end
-				end
-				if not enabled then
-					require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-				end
-			end,
-		},
-	},
+	dependencies = { "windwp/nvim-ts-autotag", "nvim-treesitter/nvim-treesitter-textobjects" },
 	opts = {
 		-- A list of parser names, or "all" (the four listed parsers should always be installed)
 		ensure_installed = {
@@ -81,20 +59,18 @@ return {
 		},
 		-- termcolors = {} -- table of colour name strings
 	},
-	config = function(_, opts)
-		if type(opts.ensure_installed) == "table" then
-			---@type table<string, boolean>
-			local added = {}
-			opts.ensure_installed = vim.tbl_filter(function(lang)
-				if added[lang] then
-					return false
-				end
-				added[lang] = true
-				return true
-			end, opts.ensure_installed)
-		end
-		require("nvim-treesitter.configs").setup(opts)
-	end,
+	--[[ config = function(_, opts) ]]
+	--[[ 	if type(opts.ensure_installed) == "table" then ]]
+	--[[ 		---@type table<string, boolean> ]]
+	--[[ 		local added = {} ]]
+	--[[ 		opts.ensure_installed = vim.tbl_filter(function(lang) ]]
+	--[[ 			if added[lang] then ]]
+	--[[ 				return false ]]
+	--[[ 			end ]]
+	--[[ 			added[lang] = true ]]
+	--[[ 			return true ]]
+	--[[ 		end, opts.ensure_installed) ]]
+	--[[ 	end ]]
+	--[[ 	require("nvim-treesitter.configs").setup(opts) ]]
+	--[[ end, ]]
 }
---[[ local parser_config = require("nvim-treesitter.parsers").get_parser_configs() ]]
---[[ parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" } ]]

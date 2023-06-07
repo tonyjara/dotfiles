@@ -5,13 +5,13 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Navigate start, end, top and bottom
-map("n", "J", "G", opts) --bottom
-map("n", "K", "gg", opts) --top
+--[[ map("n", "J", "G", opts) --bottom ]]
+--[[ map("n", "K", "gg", opts) --top ]]
 map("n", "L", "$", opts) --end
 map("n", "H", "^", opts) --start
 
-map("v", "J", "G", opts) --bottom
-map("v", "K", "gg", opts) --top
+--[[ map("v", "J", "G", opts) --bottom ]]
+--[[ map("v", "K", "gg", opts) --top ]]
 map("v", "L", "$", opts) --end
 map("v", "H", "^", opts) --start
 

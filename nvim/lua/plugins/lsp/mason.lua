@@ -7,14 +7,14 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		requires = {
+		dependencies = {
 			"neovim/nvim-lspconfig",
 			"williamboman/mason.nvim",
 		},
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"tsserver",
+					--[[ "tsserver", ]]
 					"pyright",
 					"lua_ls",
 					"jsonls",
@@ -28,7 +28,7 @@ return {
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		requires = {
+		dependencies = {
 			"williamboman/mason.nvim",
 		},
 		config = function()

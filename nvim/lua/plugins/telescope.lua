@@ -30,6 +30,7 @@ return {
 					".git/",
 					"lazy.lock",
 					"prisma.migrations/",
+					"automatic_backups/",
 				},
 			},
 		})
