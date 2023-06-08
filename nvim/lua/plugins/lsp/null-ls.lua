@@ -1,40 +1,40 @@
 return {
-	"jose-elias-alvarez/null-ls.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    --[[ event = { "BufReadPre", "BufNewFile" }, ]]
+    --[[ dependencies = { "mason.nvim" }, ]]
+    config = function()
+        local null_ls = require("null-ls")
+        local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+        local event = "BufWritePre" -- or "BufWritePost"
+        local async = event == "BufWritePost"
 
-	--[[ event = { "BufReadPre", "BufNewFile" }, ]]
-	--[[ dependencies = { "mason.nvim" }, ]]
-	config = function()
-		local null_ls = require("null-ls")
-		local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-		local event = "BufWritePre" -- or "BufWritePost"
-		local async = event == "BufWritePost"
+        null_ls.setup({
+            --[[ default_timeout = 5000, ]]
+            sources = {
+                require("typescript.extensions.null-ls.code-actions"),
+                null_ls.builtins.formatting.stylua,
+                -- Python
+                null_ls.builtins.diagnostics.mypy,
+                null_ls.builtins.diagnostics.ruff,
+                null_ls.builtins.formatting.black,
 
-		null_ls.setup({
-			--[[ default_timeout = 5000, ]]
-			sources = {
-				require("typescript.extensions.null-ls.code-actions"),
-				null_ls.builtins.formatting.stylua,
-				-- Python
-				null_ls.builtins.diagnostics.mypy,
-				null_ls.builtins.diagnostics.ruff,
-				null_ls.builtins.formatting.black,
-
-				null_ls.builtins.formatting.Prettier,
-			},
-			on_attach = function(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					-- format on save
-					vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-					vim.api.nvim_create_autocmd(event, {
-						buffer = bufnr,
-						group = group,
-						callback = function()
-							vim.lsp.buf.format({ bufnr = bufnr, async = async })
-						end,
-						desc = "[lsp] format on save",
-					})
-				end
-			end,
-		})
-	end,
+                null_ls.builtins.formatting.Prettier,
+            },
+            on_attach = function(client, bufnr)
+                if client.supports_method("textDocument/formatting") then
+                    -- format on save
+                    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+                    vim.api.nvim_create_autocmd(event, {
+                        buffer = bufnr,
+                        group = group,
+                        callback = function()
+                            vim.lsp.buf.format({ bufnr = bufnr, async = async })
+                        end,
+                        desc = "[lsp] format on save",
+                    })
+                end
+            end,
+        })
+    end,
 }
