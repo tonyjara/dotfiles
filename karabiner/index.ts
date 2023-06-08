@@ -53,7 +53,7 @@ fs.writeFileSync(
   JSON.stringify(
     {
       global: {
-        show_in_menu_bar: true,
+        show_in_menu_bar: false,
       },
       profiles: [
         {

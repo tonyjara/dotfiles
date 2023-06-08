@@ -23,10 +23,10 @@ return {
                 end,
             })
         end
-        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-        vim.keymap.set("n", "<leader>lp", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "<leader>ln", vim.diagnostic.goto_next)
-        vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+        vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { desc = "Open diagnostics float" })
+        vim.keymap.set("n", "<leader>lp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
+        vim.keymap.set("n", "<leader>ln", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+        vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open list of diagnostics" })
 
         -- Use an on_attach function to only map the following keys
         -- after the language server attaches to the current buffer
@@ -90,17 +90,6 @@ return {
             filetypes = { "python" },
         })
 
-        --[[ nvim_lsp.tsserver.setup({ ]]
-        --[[     on_init = function(client) ]]
-        --[[     	-- This makes sure tsserver is not used for formatting (prefer prettier) ]]
-        --[[     	client.server_capabilities.documentFormattingProvider = false ]]
-        --[[     end, ]]
-        --[[     on_attach = on_attach, ]]
-        --[[     filetypes = { "typescript", "typescriptreact", "typescript.tsx" }, ]]
-        --[[     cmd = { "typescript-language-server", "--stdio" }, ]]
-        --[[     capabilities = capabilities, ]]
-        --[[ }) ]]
-
         require("typescript").setup({
             disable_commands = false, -- prevent the plugin from creating Vim commands
             debug = false,   -- enable debug logging for commands
@@ -115,7 +104,6 @@ return {
             server = { -- pass options to lspconfig's setup method
                 on_attach = on_attach,
             },
-            --[[ capabilities = capabilities, ]]
         })
 
         nvim_lsp.sourcekit.setup({
@@ -162,6 +150,11 @@ return {
         })
 
         nvim_lsp.prismals.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
+        nvim_lsp.pyright.setup({
             on_attach = on_attach,
             capabilities = capabilities,
         })

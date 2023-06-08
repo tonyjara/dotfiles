@@ -13,6 +13,15 @@ export const shellCommands: SubLayerRules = {
       ],
     },
     r: {
+      description: "yabai restart",
+      to: [
+        {
+          shell_command: "/bin/zsh ~/.config/scripts/restart-yabai.sh",
+        },
+      ],
+    },
+
+    g: {
       description: "yabai run",
       to: [
         {

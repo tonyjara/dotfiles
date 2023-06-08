@@ -1,7 +1,13 @@
 window:
-  opacity: 0.95
+  opacity: 0.94
 font:
   normal:
-    family: "JetBrainsMono Nerd Font"
-    # family: "Hack Nerd Font"
-  size: 13.0
+    # Mono shrinks icons
+    # family: "FiraCode Nerd Font" # chonky clear curvy
+    # family: "GohuFont 14 Nerd Font" # cool sharp oldschool
+    # family: "GohuFont uni11 Nerd Font" # pretty weir oldschool looking
+    family: "Mononoki Nerd Font" # Straight squarey
+    # family: "RobotoMono Nerd Font" # feels like default font
+    # family: "JetBrainsMono Nerd Font" # OG
+    style: "Regular"
+  size: 13
