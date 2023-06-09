@@ -9,14 +9,14 @@ window:
 font:
   normal:
     # Mono shrinks icons
-    family: "FiraCode Nerd Font" # chonky clear curvy
+    # family: "FiraCode Nerd Font" # chonky clear curvy
     # family: "GohuFont 14 Nerd Font" # cool sharp oldschool
     # family: "GohuFont uni11 Nerd Font" # pretty weir oldschool looking
     # family: "Mononoki Nerd Font" # Straight squarey
-    # family: "RobotoMono Nerd Font" # feels like default font
+    family: "RobotoMono Nerd Font" # feels like default font
     # family: "JetBrainsMono Nerd Font" # OG
-    style: "Regular"
-  size: 13
+    style: "Regular" # Regular, SemiBold, Bold
+  size: 14
 mouse:
   # hide the cursor when typing
   hide_when_typing: true

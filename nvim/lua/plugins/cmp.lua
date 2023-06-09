@@ -24,7 +24,6 @@ return {
 					require("luasnip.loaders.from_vscode").lazy_load()
 				end,
 			},
-			--[[ "rafamadriz/friendly-snippets", ]]
 
 			-- Copilot
 			"github/copilot.vim",
@@ -40,14 +39,18 @@ return {
 						luasnip.lsp_expand(args.body) -- For `luasnip` users.
 					end,
 				},
+				performance = {
+					max_view_entries = 100,
+				},
 				sources = {
 					-- ORDER MATTERS HERE
 					-- Other options are keyword_length and priority, length is to specify when cmp should begin
-					{ name = "nvim_lua" },
-					{ name = "nvim_lsp" },
-					{ name = "buffer" },
-					{ name = "luasnip" },
-					{ name = "path" },
+					{ name = "luasnip", max_item_count = 2 },
+					{ name = "nvim_lua", max_item_count = 5 },
+					{ name = "nvim_lsp", max_item_count = 5 },
+					{ name = "buffer", max_item_count = 5 },
+					{ name = "path", max_item_count = 5 },
+					--[[ { name = "cmp_luasnip", max_item_count = 2 ]]
 				},
 				mapping = {
 					["<C-p>"] = cmp.mapping.select_prev_item(),
