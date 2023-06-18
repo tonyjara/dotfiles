@@ -1,10 +1,9 @@
-vim.opt.guicursor = ""
-
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+--[[ vim.opt.guicursor = "" ]]
 -- Fix slow exit times?
-vim.opt.fsync = false
+--[[ vim.opt.fsync = false ]]
 
 vim.opt.nu = true
---[[ vim.opt.relativenumber = true ]]
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -32,15 +31,14 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 1
---[[ vim.opt = 1 ]]
 vim.opt.mousemodel = "popup"
 
-vim.opt.fo:remove("c")     -- Dont comment new lines after commented line
-vim.opt.fo:remove("r")     -- Dont comment new lines after commented line
+vim.opt.fo:remove("c") -- Dont comment new lines after commented line
+vim.opt.fo:remove("r") -- Dont comment new lines after commented line
 vim.opt.fo:remove({ "o" }) -- Dont comment new lines after commented line
 
 vim.diagnostic.config({
-    update_in_insert = true,
+	update_in_insert = true,
 })
 
 vim.opt.spelllang = "en_us,es"

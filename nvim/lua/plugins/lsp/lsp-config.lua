@@ -108,21 +108,6 @@ return {
 			cmd = { "typescript-language-server", "--stdio" },
 			capabilities = capabilities,
 		})
-		--[[]]
-		--[[ require("typescript").setup({ ]]
-		--[[ 	disable_commands = false, -- prevent the plugin from creating Vim commands ]]
-		--[[ 	debug = false, -- enable debug logging for commands ]]
-		--[[ 	go_to_source_definition = { ]]
-		--[[ 		fallback = true, -- fall back to standard LSP definition on failure ]]
-		--[[ 	}, ]]
-		--[[]]
-		--[[ 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" }, ]]
-		--[[ 	cmd = { "typescript-language-server", "--stdio" }, ]]
-		--[[ 	capabilities = capabilities, ]]
-		--[[ 	server = { -- pass options to lspconfig's setup method ]]
-		--[[ 	on_attach = on_attach, ]]
-		--[[ 	}, ]]
-		--[[ }) ]]
 
 		nvim_lsp.sourcekit.setup({
 			on_attach = on_attach,
@@ -154,12 +139,33 @@ return {
 		nvim_lsp.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+			--[[ filetypes = { "typescript", "typescriptreact", "typescript.tsx" }, ]]
 		})
 
 		nvim_lsp.cssls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			settings = {
+				-- This settings get rid of tailwind esling issues
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				scss = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				less = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
 		})
 
 		nvim_lsp.astro.setup({

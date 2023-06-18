@@ -1,0 +1,50 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.1",
+  "schemes" : [
+    {
+      "pointer" : {
+        "acceleration" : 0.5,
+        "speed" : 0.3,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.6.0",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "productID" : "0x27da",
+          "category" : "mouse",
+          "vendorID" : "0x16c0"
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 5,
+        "speed" : 0.0689655172413792768,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "HID Gaming Mouse",
+          "productID" : "0x8b8",
+          "category" : "mouse",
+          "vendorID" : "0x1bcf"
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 3
+      },
+      "if" : {
+        "device" : {
+          "productName" : "MX Anywhere 2",
+          "serialNumber" : "BC5B591191087C21",
+          "productID" : "0xb018",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      }
+    }
+  ]
+}

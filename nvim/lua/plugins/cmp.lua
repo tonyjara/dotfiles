@@ -27,7 +27,18 @@ return {
 
 			-- Copilot
 			"github/copilot.vim",
+			-- Tailwind
+			{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
 		},
+		-- ONLY WORKS WITH LAZY VIM
+		--[[ opts = function(_, opts) ]]
+		--[[ 	-- original LazyVim kind icon formatter ]]
+		--[[ 	local format_kinds = opts.formatting.format ]]
+		--[[ 	opts.formatting.format = function(entry, item) ]]
+		--[[ 		format_kinds(entry, item) -- add icons ]]
+		--[[ 		return require("tailwindcss-colorizer-cmp").formatter(entry, item) ]]
+		--[[ 	end ]]
+		--[[ end, ]]
 		config = function()
 			local lspkind = require("lspkind")
 			local cmp = require("cmp")
@@ -47,7 +58,7 @@ return {
 					-- Other options are keyword_length and priority, length is to specify when cmp should begin
 					{ name = "luasnip", max_item_count = 2 },
 					{ name = "nvim_lua", max_item_count = 5 },
-					{ name = "nvim_lsp", max_item_count = 5 },
+					{ name = "nvim_lsp", max_item_count = 40 },
 					{ name = "buffer", max_item_count = 5 },
 					{ name = "path", max_item_count = 5 },
 					--[[ { name = "cmp_luasnip", max_item_count = 2 ]]

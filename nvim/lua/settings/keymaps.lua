@@ -1,6 +1,5 @@
 vim.g.mapleader = " " -- maps space to word leader
 
--- This is necessary to not source nvim-tree every time
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
@@ -61,10 +60,12 @@ map("i", "<C-s>", "<Esc><cmd>update<CR>") -- SAVES file
 map("n", "d", '"_d') -- delete without cutting
 map("n", "ˇ", "<cmd>tabclose<CR>")
 map("n", "<C-s>", "<cmd>update<CR>") -- SAVES file
+map("n", "<leader>s", "<cmd>update<CR>") -- SAVES file
 
 --VISUAL MODE REBINDS
 map("v", "d", '"_d') -- delete without cutting
 map("v", "<C-s>", "<Esc><cmd>update<CR>") -- SAVES file
+map("v", "<leader>s", "<Esc><cmd>update<CR>") -- SAVES file
 
 --Copy to clipboard
 map("v", "<leader>y", '"+y') --   vnoremap  <leader>y  "+y
