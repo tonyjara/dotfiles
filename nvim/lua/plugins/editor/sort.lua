@@ -1,6 +1,6 @@
 return {
 	"sQVe/sort.nvim",
-	opts = function()
+	config = function()
 		require("sort").setup({
 			delimiters = {
 				",",
@@ -13,7 +13,6 @@ return {
 		})
 
 		local map = vim.api.nvim_set_keymap
-		local opts = { noremap = true, silent = true }
-		map("v", "<leader>cs", "<cmd>Sort<CR>", opts)
+		map("v", "<leader>cs", "<cmd>Sort<CR>", { noremap = true, silent = true, desc = "Sort selection" })
 	end,
 }

@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		"lukas-reineke/lsp-format.nvim",
 	},
 	config = function()
 		local status, nvim_lsp = pcall(require, "lspconfig")
@@ -20,19 +21,6 @@ return {
 		}
 		capabilities.textDocument.colorProvider = { dynamicRegistration = false }
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-		local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
-
-		local enable_format_on_save = function(_, bufnr)
-			vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup_format,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
-				end,
-			})
-		end
 
 		--Global keymaps
 		vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { desc = "Open diagnostics float" })
@@ -94,6 +82,12 @@ return {
 		nvim_lsp.eslint.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			--[[ on_attach = function(_, bufnr) ]]
+			--[[ 	vim.api.nvim_create_autocmd("BufWritePre", { ]]
+			--[[ 		buffer = bufnr, ]]
+			--[[ 		command = "EslintFixAll", ]]
+			--[[ 	}) ]]
+			--[[ end, ]]
 		})
 
 		nvim_lsp.pyright.setup({
@@ -103,11 +97,33 @@ return {
 		})
 
 		nvim_lsp.tsserver.setup({
-			on_attach = on_attach,
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+			on_attach = function(client, bufnr)
+				client.server_capabilities.document_formating = false
+				on_attach(client, bufnr)
+			end,
+			filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
 			cmd = { "typescript-language-server", "--stdio" },
 			capabilities = capabilities,
 		})
+
+		--[[ require("typescript-tools").setup({ ]]
+		--[[ 	on_attach = on_attach, ]]
+		--[[ 	settings = { ]]
+		--[[ 		-- spawn additional tsserver instance to calculate diagnostics on it ]]
+		--[[ 		separate_diagnostic_server = true, ]]
+		--[[ 		-- "change"|"insert_leave" determine when the client asks the server about diagnostic ]]
+		--[[ 		publish_diagnostic_on = "insert_leave", ]]
+		--[[ 		-- specify a list of plugins to load by tsserver, e.g., for support `styled-components` ]]
+		--[[ 		-- (see 💅 `styled-components` support section) ]]
+		--[[ 		tsserver_plugins = {}, ]]
+		--[[ 		-- this value is passed to: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes ]]
+		--[[ 		-- memory limit in megabytes or "auto"(basically no limit) ]]
+		--[[ 		tsserver_max_memory = "auto", ]]
+		--[[ 		-- described below ]]
+		--[[ 		tsserver_format_options = {}, ]]
+		--[[ 		tsserver_file_preferences = {}, ]]
+		--[[ 	}, ]]
+		--[[ }) ]]
 
 		nvim_lsp.sourcekit.setup({
 			on_attach = on_attach,
@@ -116,10 +132,11 @@ return {
 
 		nvim_lsp.lua_ls.setup({
 			capabilities = capabilities,
-			on_attach = function(client, bufnr)
-				on_attach(client, bufnr)
-				enable_format_on_save(client, bufnr)
-			end,
+			on_attach = on_attach,
+			--[[ on_attach = function(client, bufnr) ]]
+			--[[ 	on_attach(client, bufnr) ]]
+			--[[ 	enable_format_on_save(client, bufnr) ]]
+			--[[ end, ]]
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -139,7 +156,7 @@ return {
 		nvim_lsp.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			--[[ filetypes = { "typescript", "typescriptreact", "typescript.tsx" }, ]]
+			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 		})
 
 		nvim_lsp.cssls.setup({
