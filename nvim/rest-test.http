@@ -1,0 +1,14 @@
+GET https://pokeapi.co/api/v2/pokemon/pikachu
+
+POST https://jsonplaceholder.typicode.com/posts
+content-type: application/json
+
+{
+  "alpha": "developer",
+  "key": "{{KEY}}", 
+  "number": "{{$randomInt}}"
+}
+
+
+GET https://httpbin.org/headers
+x-test: alpha
