@@ -51,52 +51,39 @@ const rules: KarabinerRules[] = [
         type: "basic",
       },
       {
-        description: "Toggle yeet browser",
+        description: "Left ctr is cmd",
         from: {
-          key_code: "fn",
+          key_code: "left_control",
         },
-        to_if_alone: [
+        to: [
           {
-            key_code: "3",
-            modifiers: ["left_option"],
-          },
-          {
-            key_code: "3",
-            modifiers: ["left_option", "left_shift"],
-          },
-          //Switch to the yeeting space
-          {
-            key_code: "h",
-            modifiers: ["left_command", "left_shift"],
+            key_code: "left_command",
           },
         ],
-        /* to_if_held_down: [ */
-        /*   { */
-        /*     key_code: "3", */
-        /*     modifiers: ["left_option", "left_shift"], */
-        /*   }, */
-        /*   { */
-        /*     key_code: "3", */
-        /*     modifiers: ["left_option"], */
-        /*   }, */
-        /*   { */
-        /*     key_code: "h", */
-        /*     modifiers: ["left_command", "left_shift"], */
-        /*   }, */
-        /* ], */
-        /* to_after_key_up: [ */
-        /*   { */
-        /*     key_code: "2", */
-        /*     modifiers: ["left_option", "left_shift"], */
-        /*   }, */
-        /*   //Switch to the yeeting space */
-        /*   { */
-        /*     key_code: "2", */
-        /*     modifiers: ["left_option"], */
-        /*   }, */
-        /* ], */
         type: "basic",
       },
+      /* { */
+      /*   description: "Toggle yeet browser", */
+      /*   from: { */
+      /*     key_code: "fn", */
+      /*   }, */
+      /*   to_if_alone: [ */
+      /*     { */
+      /*       key_code: "3", */
+      /*       modifiers: ["left_option"], */
+      /*     }, */
+      /*     { */
+      /*       key_code: "3", */
+      /*       modifiers: ["left_option", "left_shift"], */
+      /*     }, */
+      /*     //Switch to the yeeting space */
+      /*     { */
+      /*       key_code: "h", */
+      /*       modifiers: ["left_command", "left_shift"], */
+      /*     }, */
+      /*   ], */
+      /*   type: "basic", */
+      /* }, */
       {
         description: "Toggle yeet browser",
         from: {

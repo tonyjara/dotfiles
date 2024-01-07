@@ -1,3 +1,6 @@
+--[[ vim.opt.splitbelow = true ]]
+--[[ vim.opt.splitright = true ]]
+
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 --[[ vim.opt.guicursor = "" ]]
 -- Fix slow exit times?
@@ -20,6 +23,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+vim.opt.splitright = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 

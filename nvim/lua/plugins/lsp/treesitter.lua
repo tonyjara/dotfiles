@@ -8,9 +8,16 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		local configs = require("nvim-treesitter.configs")
+
+		vim.treesitter.language.register("bash", "sh")
+		vim.treesitter.language.register("markdown", "mdx")
+
+		--[[ local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername ]]
+		--[[ ft_to_parser.mdx = "markdown" ]]
 		configs.setup({
 			ensure_installed = {
 				"astro",
+				"bash",
 				"c",
 				"css",
 				"help",
@@ -18,12 +25,14 @@ return {
 				"http",
 				"javascript",
 				"json",
+				"jsdoc",
 				"lua",
 				"markdown",
 				"markdown_inline",
 				"prisma",
 				"python",
 				"tsx",
+				"svelte",
 				"typescript",
 				"vim",
 				"yaml",
@@ -42,6 +51,8 @@ return {
 					node_decremental = "<bs>",
 				},
 			},
+			ignore_install = { "haskell" },
+			modules = {},
 			sync_install = true,
 			auto_install = true,
 			autopairs = {
@@ -57,10 +68,6 @@ return {
 			},
 			autotag = {
 				enable = true,
-			},
-			context_commentstring = {
-				enable = true,
-				enable_autocmd = false,
 			},
 		})
 	end,

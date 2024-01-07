@@ -1,13 +1,14 @@
 return {
 	"vuki656/package-info.nvim",
 	dependencies = "MunifTanjim/nui.nvim",
-	opts = function()
+	configs = function()
 		require("package-info").setup({
 			colors = {
 				up_to_date = "237", -- cterm Grey237
 				outdated = "173", -- cterm LightSalmon3
 			},
 			package_manager = "pnpm",
+			autostart = false,
 		})
 
 		-- Show dependency versions

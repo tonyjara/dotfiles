@@ -14,3 +14,8 @@ autocmd("BufEnter", {
 		})
 	end,
 })
+
+autocmd({ "BufEnter", "BufNewFile" }, {
+	pattern = ".env*",
+	command = "set filetype=conf",
+})

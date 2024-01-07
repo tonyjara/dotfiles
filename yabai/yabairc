@@ -62,10 +62,16 @@ yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^NordVPN$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^Upwork$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Shortcuts$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Windows 11$" manage=off
+yabai -m rule --add app="^Terminal$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
+yabai -m rule --add app="^Bazecor$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
+yabai -m rule --add app="^VNC Viewer$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 # yabai -m rule --add app="^Warp$" manage=off
 yabai -m rule --add app="^Paralells Desktop$" manage=off

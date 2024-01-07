@@ -3,12 +3,14 @@ import { app } from "../utils/utils";
 
 /** o = "Open" applications*/
 export const openApps: SubLayerRules = {
-  o: {
+  q: {
     a: app("Arc"),
-    c: app("Google Chrome"),
     d: app("Discord"),
+    c: app("Final Cut Pro"),
+    f: app("Finder"),
     n: app("Obsidian"), // n of notes
     k: app("Kitty"), // n of notes
+    m: app("Microsoft Outlook"), // m of Microsoft
     r: app("Telegram"),
     s: app("Spotify"),
     v: app("Visual Studio Code"),

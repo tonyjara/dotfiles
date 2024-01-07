@@ -117,11 +117,32 @@ return {
 
 		nvim_lsp.tsserver.setup({
 			on_attach = on_attach,
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
+			filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
 			cmd = { "typescript-language-server", "--stdio" },
 			capabilities = capabilities,
 		})
-
+		nvim_lsp.svelte.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			cmd = { "svelteserver", "--stdio" },
+			filetypes = { "svelte" },
+		})
+		nvim_lsp.graphql.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "graphql" },
+		})
+		--[[ "languageserver": { ]]
+		--[[   "graphql": { ]]
+		--[[     "command": "graphql-lsp", ]]
+		--[[     "args": ["server", "-m", "stream"], ]]
+		--[[     // customize filetypes to your needs ]]
+		--[[     "filetypes": ["typescript", "typescriptreact", "graphql"], ]]
+		--[[     "settings": { ]]
+		--[[         "graphql-config.load.legacy": true ]]
+		--[[     } ]]
+		--[[   } ]]
+		--[[ } ]]
 		--[[ require("typescript").setup({ ]]
 		--[[ 	disable_commands = false, -- prevent the plugin from creating Vim commands ]]
 		--[[ 	debug = false, -- enable debug logging for commands ]]
@@ -163,14 +184,65 @@ return {
 		nvim_lsp.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+			filetypes = { "astro", "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
 		})
-
+		nvim_lsp.jsonls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "json", "jsonc" },
+			settings = {
+				json = {
+					-- Schemas https://www.schemastore.org
+					schemas = {
+						{
+							fileMatch = { "package.json" },
+							url = "https://json.schemastore.org/package.json",
+						},
+						{
+							fileMatch = { "tsconfig*.json" },
+							url = "https://json.schemastore.org/tsconfig.json",
+						},
+						{
+							fileMatch = {
+								".prettierrc",
+								".prettierrc.json",
+								"prettier.config.json",
+							},
+							url = "https://json.schemastore.org/prettierrc.json",
+						},
+						{
+							fileMatch = { ".eslintrc", ".eslintrc.json" },
+							url = "https://json.schemastore.org/eslintrc.json",
+						},
+						{
+							fileMatch = { ".babelrc", ".babelrc.json", "babel.config.json" },
+							url = "https://json.schemastore.org/babelrc.json",
+						},
+						{
+							fileMatch = { "lerna.json" },
+							url = "https://json.schemastore.org/lerna.json",
+						},
+						{
+							fileMatch = { "now.json", "vercel.json" },
+							url = "https://json.schemastore.org/now.json",
+						},
+						{
+							fileMatch = {
+								".stylelintrc",
+								".stylelintrc.json",
+								"stylelint.config.json",
+							},
+							url = "http://json.schemastore.org/stylelintrc.json",
+						},
+					},
+				},
+			},
+		})
 		nvim_lsp.cssls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
-				-- This settings get rid of tailwind esling issues
+				-- This settings get rid of tailwind eslint issues
 				css = {
 					validate = true,
 					lint = {

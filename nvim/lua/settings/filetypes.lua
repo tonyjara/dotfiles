@@ -1,15 +1,33 @@
 vim.filetype.add({
+	-- Detect and assign filetype based on the extension of the filename
 	extension = {
 		mdx = "mdx",
 		astro = "astro",
-		--[[ env = "dotenv", ]]
+		log = "log",
+		conf = "conf",
+		env = "dotenv",
 	},
+	-- Detect and apply filetypes based on the entire filename
 	filename = {
-		--[[ [".env"] = "dotenv", ]]
+		[".env"] = "dotenv",
+		["env"] = "dotenv",
 		["tsconfig.json"] = "jsonc",
-		[".yamlfmt"] = "yaml",
 	},
+	-- Detect and apply filetypes based on certain patterns of the filenames
 	pattern = {
-		--[[ ["%.env%.[%w_.-]+"] = "dotenv", ]]
+		-- INFO: Match filenames like - ".env.example", ".env.local" and so on
+		["%.env%.[%w_.-]+"] = "dotenv",
 	},
 })
+--[[ vim.filetype.add({ ]]
+--[[ 	extension = { ]]
+--[[ 		mdx = "mdx", ]]
+--[[ 		astro = "astro", ]]
+--[[ 	}, ]]
+--[[ 	filename = { ]]
+--[[ 		["tsconfig.json"] = "jsonc", ]]
+--[[ 		[".yamlfmt"] = "yaml", ]]
+--[[ 	}, ]]
+--[[ 	pattern = { ]]
+--[[ 	}, ]]
+--[[ }) ]]

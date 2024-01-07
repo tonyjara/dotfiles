@@ -25,16 +25,7 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { "branch" },
 				lualine_c = { "filename" },
-				lualine_x = {
-					--[[ { ]]
-					--[[ 	function() ]]
-					--[[ 		local buffers = require("buffalo").buffers() ]]
-					--[[ 		local tabpages = require("buffalo").tabpages() ]]
-					--[[ 		return "󱂬 " .. buffers .. " 󰓩 " .. tabpages ]]
-					--[[ 	end, ]]
-					--[[ 	color = { fg = "#ffaa00", bg = "#24273a" }, ]]
-					--[[ }, ]]
-				},
+				lualine_x = {},
 				lualine_y = {},
 				lualine_z = {},
 			},

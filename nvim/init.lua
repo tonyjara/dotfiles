@@ -5,6 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 require("settings.options")
 require("settings.autocmds")
 require("settings.keymaps")
+require("settings.vscode-keymaps")
 require("settings.filetypes")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

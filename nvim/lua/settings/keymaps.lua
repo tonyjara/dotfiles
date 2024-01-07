@@ -35,16 +35,12 @@ map("n", "<leader>si{", "vi{:'<,'>sort<CR>", { noremap = true, silent = true, de
 map(
 	"n",
 	"<leader>]",
-	"<cmd>vsplit<CR><cmd>BufferLineCyclePrev<CR><C-w>p",
+	"<cmd>vsplit<CR><C-w>p<cmd>BufferLineCyclePrev<CR><C-w>p",
 	{ noremap = true, silent = true, desc = "Split horizontally and go back to the previous buffer" }
 )
 --  Go to definition in a split
-map(
-	"n",
-	"<leader>v]",
-	"<C-]><cmd>vsplit<CR><cmd>BufferLineCyclePrev<CR><C-w>p",
-	{ noremap = true, silent = true, desc = "Go to definition in a split" }
-)
+map("n", "<leader>v]", "<cmd>vsplit<CR><C-]>", { noremap = true, silent = true, desc = "Go to definition in a split" })
+
 -- Clear all buffers and splits Buffer kill
 map(
 	"n",
@@ -60,6 +56,14 @@ map(
 	{ noremap = true, silent = true, desc = "Clear all buffers and splits but the one where the cursor is" }
 )
 
+-- Spell check
+map(
+	"n",
+	"<leader>sce",
+	"<cmd>:set spell spelllang=en_us<CR>",
+	{ noremap = true, silent = true, desc = "Spell check enable" }
+)
+map("n", "<leader>scd", "<cmd>:set nospell<CR>", { noremap = true, silent = true, desc = "Spell check disable" })
 -- Lazy git
 map("n", "<leader>lg", "<cmd>:LazyGit<CR>", opts)
 

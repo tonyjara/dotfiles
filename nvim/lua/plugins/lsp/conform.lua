@@ -8,19 +8,19 @@ return {
 				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
 				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd" } },
-				typescript = { { "prettierd" } },
-				typescriptreact = { { "prettierd" } },
-				astro = { { "prettierd" } },
-				css = { { "prettierd" } },
-				scss = { { "prettierd" } },
-				html = { { "prettierd" } },
-				json = { { "prettierd" } },
-				yaml = { { "prettierd" } },
-				markdown = { { "prettierd" } },
-				graphql = { { "prettierd" } },
-				md = { { "prettierd" } },
-				txt = { { "prettierd" } },
+				javascript = { { "prettier" } },
+				typescript = { { "prettier" } },
+				typescriptreact = { { "prettier" } },
+				astro = { { "prettier" } },
+				css = { { "prettier" } },
+				scss = { { "prettier" } },
+				html = { { "prettier" } },
+				json = { { "prettier" } },
+				yaml = { { "prettier" } },
+				markdown = { { "prettier" } },
+				graphql = { { "prettier" } },
+				md = { { "prettier" } },
+				txt = { { "prettier" } },
 				-- Use the "*" filetype to run formatters on all files.
 				-- Note that if you use this, you may want to set lsp_fallback = "always"
 				-- (see :help conform.format)
