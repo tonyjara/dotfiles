@@ -1,0 +1,36 @@
+{
+  "project_name": "golang-platypost",
+  "focused_section": 0,
+  "mode": "select",
+  "sidebar_state": {
+    "selected_index": 4,
+    "expanded_folders": {
+      "aver": true,
+      "coso del coso de la cosa del coso": false,
+      "rey": true,
+      "sample": false,
+      "superexamples": true,
+      "test": false
+    },
+    "selected_call_file": "rey.http",
+    "selected_call_name": "Create a new user"
+  },
+  "request_state": {
+    "active_tab": 0
+  },
+  "response_state": {
+    "active_tab": 0,
+    "response_content": "Error: Error executing request: Post \"https://jsonplaceholder.typicode.com/users\": net/http: invalid header field name \"\\\"username\\\"\"",
+    "response_status": "",
+    "response_headers": ""
+  },
+  "url_bar_state": {
+    "method": "GET",
+    "url": "http://loasdfasdfasdf"
+  },
+  "visible_sections": {
+    "1": true,
+    "2": true,
+    "3": true
+  }
+}
