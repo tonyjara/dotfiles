@@ -1,0 +1,114 @@
+{
+  "profiles" : [
+    {
+      "id" : "311B0FFB-F340-4E99-B1C4-296419A85E3C",
+      "name" : "Default",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "net.whatsapp.WhatsApp",
+              "iconPath" : "/Applications/WhatsApp.app/Contents/Resources/AppIconCatalystRelease.icns",
+              "name" : "‎WhatsApp"
+            },
+            {
+              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
+              "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
+              "name" : "Slack"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "1B0B15A1-C10B-4AAD-862B-4B316D6BBF3B",
+          "name" : "M",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+1",
+          "symbolIconName" : "message.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.todesktop.230313mzl4w4u92",
+              "iconPath" : "/Applications/Cursor.app/Contents/Resources/Cursor.icns",
+              "name" : "Cursor"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
+            {
+              "bundleIdentifier" : "app.yaak.desktop",
+              "iconPath" : "/Applications/Yaak.app/Contents/Resources/icon.icns",
+              "name" : "Yaak"
+            },
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "14128310-ABCA-471E-A10A-C0FBB5404D06",
+          "name" : "C",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+2",
+          "symbolIconName" : "macwindow.and.cursorarrow"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
+              "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "app.yaak.desktop",
+              "iconPath" : "/Applications/Yaak.app/Contents/Resources/icon.icns",
+              "name" : "Yaak"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "F11626DA-39E2-40C4-829D-C283DD4D6F43",
+          "name" : "G",
+          "openAppsOnActivation" : false,
+          "shortcut" : "opt+3",
+          "symbolIconName" : "sunglasses"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "org.jkiss.dbeaver.core.product",
+              "iconPath" : "/Applications/DBeaver.app/Contents/Resources/dbeaver.icns",
+              "name" : "DBeaver Community"
+            },
+            {
+              "bundleIdentifier" : "com.canva.affinity",
+              "iconPath" : "/Applications/Affinity.app/Contents/Resources/AppIcon.icns",
+              "name" : "Affinity"
+            },
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "B8444E21-6036-42E5-A0E4-8EABB6CA648E",
+          "name" : "?",
+          "openAppsOnActivation" : false,
+          "symbolIconName" : "figure.pool.swim.circle.fill"
+        }
+      ]
+    }
+  ]
+}

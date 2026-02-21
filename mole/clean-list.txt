@@ -1,0 +1,134 @@
+# Mole Cleanup Preview - 2026-02-20 17:37:44
+#
+# How to protect files:
+# 1. Copy any path below to ~/.config/mole/whitelist
+# 2. Run: mo clean --whitelist
+#
+# Example:
+#   /Users/*/Library/Caches/com.example.app
+#
+
+
+=== User essentials ===
+/Users/nytoair/Library/Caches  # 25.27GB, 130 items
+/Users/nytoair/Library/Logs  # 116.1MB, 140 items
+
+=== Finder metadata ===
+
+=== macOS system caches ===
+/Users/nytoair/Library/Saved Application State  # 709KB, 49 items
+/Users/nytoair/Library/Autosave Information/Unsaved Xcode Document.xcworkspace  # 16KB
+/Users/nytoair/Library/Suggestions  # 21.2MB, 20 items
+
+=== Sandboxed app caches ===
+
+=== Browsers ===
+/Users/nytoair/Library/Caches/com.apple.Safari  # 668KB, 2 items
+/Users/nytoair/Library/Caches/Google/Chrome  # 1.22GB, 3 items
+/Users/nytoair/Library/Application Support/Google/Chrome/Default/GPUCache  # 5.5MB, 5 items
+/Users/nytoair/Library/Application Support/Google/Chrome/ShaderCache/GPUCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Google/Chrome/GrShaderCache/GPUCache  # 11.6MB, 5 items
+/Users/nytoair/Library/Caches/Chromium/Default  # 332KB
+/Users/nytoair/.cache/puppeteer  # 470.1MB, 2 items
+/Users/nytoair/Library/Caches/company.thebrowser.Browser  # 20.0MB, 4 items
+/Users/nytoair/Library/Caches/Firefox/Profiles  # 157.2MB
+/Users/nytoair/Library/Caches/com.operasoftware.Opera  # 1.7MB, 3 items
+/Users/nytoair/Library/Caches/zen/Profiles  # 1.13GB
+
+=== Cloud storage ===
+
+=== Office applications ===
+
+=== Developer tools ===
+/Users/nytoair/Library/pnpm/store  # 19.05GB, 2 items
+/Users/nytoair/.bun/install/cache  # 944.2MB, 1774 items
+/Users/nytoair/.cargo/registry/cache  # 78.3MB, 3 items
+/Users/nytoair/.kube/cache  # 4.8MB, 2 items
+/Users/nytoair/.config/gcloud/logs  # 6.4MB, 26 items
+/Users/nytoair/.oh-my-zsh/cache/grep-alias  # 1KB
+/Users/nytoair/.node-gyp  # 21.0MB, 4 items
+/Users/nytoair/google-cloud-sdk/lib/__pycache__/gcloud.cpython-39.pyc  # 4KB
+/Users/nytoair/Desktop/SIDE/Beerable otro/.dart_tool  # 1.3MB
+/Users/nytoair/Desktop/SIDE/Beerable otro/build  # 52.6MB
+/Users/nytoair/Desktop/Bytetify/dyno/flutter-dash/.dart_tool  # 1.4MB
+/Users/nytoair/Desktop/Bytetify/dyno/flutter-dash/build  # 274.6MB
+/Users/nytoair/Desktop/Bytetify/dyno/dynowidget-web-preview/.dart_tool  # 68KB
+/Users/nytoair/Desktop/Bytetify/dyno/dynowidget-web-preview/build  # 138.5MB
+/Users/nytoair/Library/Caches/Google/AndroidStudio2022.2  # 199.1MB, 18 items
+/Users/nytoair/Library/Caches/Google/AndroidStudio2025.1.3  # 630.6MB, 19 items
+/Users/nytoair/Library/Caches/Google/AndroidStudio2025.1.4  # 680.6MB, 20 items
+/Users/nytoair/.android/cache  # 5.4MB, 80 items
+/Users/nytoair/.bundle/cache/compact_index  # 20.4MB
+/Users/nytoair/Library/Caches/deno/dep_analysis_cache_v1  # 20KB
+/Users/nytoair/Library/Caches/com.postmanlabs.mac  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.proxyman.NSProxy  # 141KB, 4 items
+/Users/nytoair/Library/Caches/com.figma.Desktop  # 334KB, 3 items
+/Users/nytoair/Library/Caches/SentryCrash  # 40KB, 10 items
+/Users/nytoair/Library/Caches/com.crashlytics.data/com.KMikiy.SpotMenu  # 116KB
+/Users/nytoair/Library/Application Support/Antigravity/Cache/Cache_Data  # 9.1MB
+/Users/nytoair/Library/Application Support/Antigravity/Code Cache  # 16KB, 2 items
+/Users/nytoair/Library/Application Support/Antigravity/GPUCache  # 5.5MB, 5 items
+/Users/nytoair/Library/Application Support/Antigravity/DawnGraphiteCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Antigravity/DawnWebGPUCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Claude/Cache  # 16.4MB, 2 items
+/Users/nytoair/Library/Application Support/Claude/Code Cache  # 5.0MB, 2 items
+/Users/nytoair/Library/Application Support/Claude/GPUCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Claude/DawnGraphiteCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Claude/DawnWebGPUCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Code/CachedData  # 31.5MB, 3 items
+/Users/nytoair/Library/Application Support/Code/DawnGraphiteCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Code/DawnWebGPUCache  # 545KB, 5 items
+/Users/nytoair/Library/Application Support/Code/GPUCache  # 5.5MB, 5 items
+/Users/nytoair/Library/Application Support/Code/CachedExtensionVSIXs  # 225.3MB, 21 items
+/Users/nytoair/Library/Caches/Homebrew  # 1.77GB, 415 items
+
+=== Development applications ===
+/Users/nytoair/Library/Caches/com.apple.dt.Xcode  # 702KB, 4 items
+/Users/nytoair/Library/Developer/Xcode/iOS Device Logs  # 660KB, 10 items
+/Users/nytoair/Library/Developer/Xcode/Products/org.reactjs.native.example.Registramena  # 52KB
+/Users/nytoair/Library/Developer/Xcode/DerivedData  # 8.80GB, 30 items
+/Users/nytoair/Library/Application Support/Code/logs  # 3.5MB, 10 items
+/Users/nytoair/Library/Application Support/Code/Cache  # 362.1MB, 2 items
+/Users/nytoair/Library/Application Support/Code/CachedExtensions  # 1.5MB, 2 items
+/Users/nytoair/Library/Application Support/Code/CachedData  # 31.5MB, 3 items
+/Users/nytoair/Library/Application Support/discord/Cache/Cache_Data  # 1.22GB
+/Users/nytoair/Library/Application Support/Slack/Cache  # 1.04GB, 2 items
+/Users/nytoair/Library/Caches/us.zoom.xos  # 88KB, 3 items
+/Users/nytoair/Library/Caches/com.anthropic.claudefordesktop  # 157KB, 3 items
+/Users/nytoair/Library/Logs/Claude  # 109KB, 7 items
+/Users/nytoair/Library/Caches/Adobe  # 251.7MB, 5 items
+/Users/nytoair/Library/Caches/com.adobe.ccd.helper  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.adobe.acc.AdobeCreativeCloud  # 84KB, 3 items
+/Users/nytoair/Library/Caches/com.adobe.lightroomCC  # 21.2MB, 5 items
+/Users/nytoair/Library/Caches/com.adobe.headlights.LogTransport2App  # 233KB, 3 items
+/Users/nytoair/Library/Caches/com.adobe.LightroomClassicCC7  # 6.3MB, 4 items
+/Users/nytoair/Library/Caches/com.adobe.accmac  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.adobe.AdobeIPCBroker  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.adobe.illustrator  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.adobe.acc.AdobeDesktopService  # 84KB, 3 items
+/Users/nytoair/Library/Caches/com.adobe.AdobeCRDaemon  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.figma.Desktop  # 334KB, 3 items
+/Users/nytoair/Library/Caches/com.apple.FinalCut  # 21.5MB, 5 items
+/Users/nytoair/Library/Caches/com.apple.TV  # 3.9MB, 6 items
+/Users/nytoair/Library/Caches/com.riotgames.RiotGames.RiotClient  # 133KB, 3 items
+/Users/nytoair  # 1.4MB, 23 items
+/Users/nytoair/.lesshst  # 1KB
+/Users/nytoair/Library/Caches/notion.id  # 80KB, 2 items
+/Users/nytoair/Library/Caches/com.teamviewer.TeamViewer/WebKit  # 1.0MB
+
+=== Virtual machine tools ===
+/Users/nytoair/Library/Caches/com.parallels.webinstaller  # 124KB
+
+=== Application Support ===
+
+=== Uninstalled app data ===
+/Users/nytoair/Library/Caches/org.Zellij-Contributors.Zellij  # 13.3MB
+/Users/nytoair/Library/Caches/org.freedesktop.thumbnails  # 128KB
+/Users/nytoair/Library/Caches/org.gimp.gimp-2.10  # 212KB
+/Users/nytoair/Library/Caches/org.swift.swiftpm  # 124KB
+/Users/nytoair/Library/Caches/io.branch.network.cache  # 1012KB
+/Users/nytoair/Library/Saved Application State/BeerSmith-LLC.BeerSmith3.savedState  # 24KB
+/Users/nytoair/Library/Saved Application State/MF.iMyFone MirrorTo.savedState  # 12KB
+/Users/nytoair/Library/Saved Application State/app.responsively.savedState  # 32KB
+/Users/nytoair/Library/Saved Application State/co.zeit.hyper.savedState  # 16KB
+/Users/nytoair/Library/Saved Application State/com.Facepunch-Studios-LTD.Rust.savedState  # 12KB
