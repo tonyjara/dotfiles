@@ -15,6 +15,16 @@
               "bundleIdentifier" : "com.tinyspeck.slackmacgap",
               "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
               "name" : "Slack"
+            },
+            {
+              "bundleIdentifier" : "app.yaak.desktop",
+              "iconPath" : "/Applications/Yaak.app/Contents/Resources/icon.icns",
+              "name" : "Yaak"
+            },
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
             }
           ],
           "display" : "Studio Display",
@@ -23,6 +33,34 @@
           "openAppsOnActivation" : false,
           "shortcut" : "opt+1",
           "symbolIconName" : "message.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.cmuxterm.app",
+              "iconPath" : "/Applications/cmux.app/Contents/Resources/AppIcon.icns",
+              "name" : "cmux"
+            },
+            {
+              "bundleIdentifier" : "app.yaak.desktop",
+              "iconPath" : "/Applications/Yaak.app/Contents/Resources/icon.icns",
+              "name" : "Yaak"
+            },
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "67B8C3D2-877C-44CC-BD4D-196F9141F255",
+          "name" : "B",
+          "openAppsOnActivation" : false
         },
         {
           "apps" : [
@@ -42,14 +80,24 @@
               "name" : "Yaak"
             },
             {
+              "bundleIdentifier" : "com.google.antigravity",
+              "iconPath" : "/Applications/Antigravity.app/Contents/Resources/Antigravity.icns",
+              "name" : "Antigravity"
+            },
+            {
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.realvnc.vncviewer",
+              "iconPath" : "/Applications/VNC Viewer.app/Contents/Resources/vncviewer.icns",
+              "name" : "VNC Viewer"
             }
           ],
           "display" : "Studio Display",
           "id" : "14128310-ABCA-471E-A10A-C0FBB5404D06",
-          "name" : "C",
+          "name" : "A",
           "openAppsOnActivation" : false,
           "shortcut" : "opt+2",
           "symbolIconName" : "macwindow.and.cursorarrow"
@@ -57,19 +105,39 @@
         {
           "apps" : [
             {
+              "bundleIdentifier" : "com.anthropic.claudefordesktop",
+              "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+              "name" : "Claude"
+            },
+            {
+              "bundleIdentifier" : "org.jkiss.dbeaver.core.product",
+              "iconPath" : "/Applications/DBeaver.app/Contents/Resources/dbeaver.icns",
+              "name" : "DBeaver Community"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
+            },
+            {
+              "bundleIdentifier" : "com.spotify.client",
+              "iconPath" : "/Applications/Spotify.app/Contents/Resources/AppIcon.icns",
+              "name" : "Spotify"
+            },
+            {
+              "bundleIdentifier" : "com.google.android.studio",
+              "iconPath" : "/Applications/Android Studio.app/Contents/Resources/studio.icns",
+              "name" : "Android Studio"
+            },
+            {
+              "bundleIdentifier" : "com.proxyman.NSProxy",
+              "iconPath" : "/Applications/Proxyman.app/Contents/Resources/AppIcon.icns",
+              "name" : "Proxyman"
+            },
+            {
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
               "name" : "Ghostty"
-            },
-            {
-              "bundleIdentifier" : "app.zen-browser.zen",
-              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
-              "name" : "Zen"
-            },
-            {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
             },
             {
               "bundleIdentifier" : "app.yaak.desktop",
@@ -78,35 +146,8 @@
             }
           ],
           "display" : "Studio Display",
-          "id" : "F11626DA-39E2-40C4-829D-C283DD4D6F43",
-          "name" : "G",
-          "openAppsOnActivation" : false,
-          "shortcut" : "opt+3",
-          "symbolIconName" : "sunglasses"
-        },
-        {
-          "apps" : [
-            {
-              "bundleIdentifier" : "org.jkiss.dbeaver.core.product",
-              "iconPath" : "/Applications/DBeaver.app/Contents/Resources/dbeaver.icns",
-              "name" : "DBeaver Community"
-            },
-            {
-              "bundleIdentifier" : "com.canva.affinity",
-              "iconPath" : "/Applications/Affinity.app/Contents/Resources/AppIcon.icns",
-              "name" : "Affinity"
-            },
-            {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
-            }
-          ],
-          "display" : "Studio Display",
-          "id" : "B8444E21-6036-42E5-A0E4-8EABB6CA648E",
-          "name" : "?",
-          "openAppsOnActivation" : false,
-          "symbolIconName" : "figure.pool.swim.circle.fill"
+          "id" : "34EB75FD-60FA-4506-9352-9FBE34523D1B",
+          "name" : "IA"
         }
       ]
     }

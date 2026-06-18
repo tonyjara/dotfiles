@@ -990,14 +990,6 @@
                         "vendor_id": 4617
                     },
                     "ignore": false
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 8705,
-                        "vendor_id": 4617
-                    },
-                    "ignore": false
                 }
             ],
             "name": "Default",

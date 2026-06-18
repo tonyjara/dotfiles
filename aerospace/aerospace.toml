@@ -227,9 +227,9 @@ run = "move-node-to-workspace 2"
 if.app-id = 'company.thebrowser.Browser'
 run = "move-node-to-workspace 2"
 
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'md.obsidian'
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
@@ -237,6 +237,10 @@ run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'com.google.antigravity '
 run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
@@ -283,6 +287,12 @@ run = 'layout floating'
 if.app-id = 'com.apple.AppStore'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-id = 'app.yaak.desktop'
-# run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.proxyman.NSProxy'
+run = "move-node-to-workspace 4"
+
+
+[[on-window-detected]]
+if.app-id = 'com.google.android.studio'
+run = "move-node-to-workspace 4"
